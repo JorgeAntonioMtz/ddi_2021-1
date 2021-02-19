@@ -15,7 +15,12 @@ public class numLessThan : MonoBehaviour
         }
         
     }
-
+    
+    /*
+        Complejidad de la función: O(n^2)
+        n^2 ya que se utiliza un for anidado a otro for.
+        Conociendo que cada for es de tipo O(n), teniendo dos sería O(n*n)
+    */
     private int[] numberLessThan(int[] arr)
     {
         int[] temp = {0,0,0,0,0};
