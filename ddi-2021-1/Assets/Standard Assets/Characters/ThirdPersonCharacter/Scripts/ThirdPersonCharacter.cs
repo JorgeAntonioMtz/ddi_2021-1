@@ -5,7 +5,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	[RequireComponent(typeof(Rigidbody))]
 	[RequireComponent(typeof(CapsuleCollider))]
 	[RequireComponent(typeof(Animator))]
-	public class ThirdPersonCharacter : MonoBehaviour
+	
+	public class ThirdPersonCharacter : Interactable
 	{
 		[SerializeField] float m_MovingTurnSpeed = 360;
 		[SerializeField] float m_StationaryTurnSpeed = 180;
@@ -28,6 +29,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		Vector3 m_CapsuleCenter;
 		CapsuleCollider m_Capsule;
 		bool m_Crouching;
+		AudioSource m_MyAudioSource;
+		bool m_Play;
 
 
 		void Start()
@@ -40,8 +43,26 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 			m_Rigidbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
 			m_OrigGroundCheckDistance = m_GroundCheckDistance;
+
+			m_MyAudioSource = GetComponent<AudioSource>();
 		}
 
+		/*public override void Update()
+		{
+			super.Update();
+		}*/
+
+		public override void Interact()
+		{
+			Debug.Log("Hola");
+			if(m_Play==false)
+			{
+				m_Play=true;
+				m_MyAudioSource.Play();
+			}
+			m_Play=false;
+
+		}
 
 		public void Move(Vector3 move, bool crouch, bool jump)
 		{
