@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GreenMushroom
   m_EditorClassIdentifier: 
   itemType: 2
-  icon: {fileID: 0}
-  lifeAmount: 5
+  icon: {fileID: -6498974498411041989, guid: d712898713d10b147828fc243009aaba, type: 3}
+  lifeAmount: 10
   effectiveness: 10

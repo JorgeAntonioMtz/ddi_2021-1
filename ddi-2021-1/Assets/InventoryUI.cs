@@ -26,27 +26,29 @@ public class InventoryUI : MonoBehaviour
     void UpdateUI()
     {
         Slot[] slots = GetComponentsInChildren<Slot>();
-        Item[] equipItems = _inventory.GetAllItemsByType(ItemType.Equip);
-        Item[] usableItems = _inventory.GetAllItemsByType(ItemType.Usable);
-        //Item[] medicineItems = _inventory.GetAllItemsByType(ItemType.Medicine);
+        /*Item[] equipItems = _inventory.GetAllItemsByType(ItemType.Equip);
+        Item[] weaponItems = _inventory.GetAllItemsByType(ItemType.Weapon);
+        Item[] consumableItems = _inventory.GetAllItemsByType(ItemType.Consumable);
+        
 
         if (equipItems.Length > 0)
             slots[0].SetItem(equipItems[0], equipItems.Length);
-        if (usableItems.Length > 0)
-            slots[1].SetItem(usableItems[0], usableItems.Length);
-        /*if (medicineItems.Length > 0)
-            slots[2].SetItem(medicineItems[0], medicineItems.Length);*/
-        Debug.Log("Cambió inventario");
-        // for (int i = 0; i < slots.Length; i++)
-        // {
-            // if (i < _inventory.items.Count)
-            // {
-            //     slots[i].SetItem(_inventory.items[i]);
-            // }
-            // else
-            // {
-            //     slots[i].Clear();
-            // }
-        // }
+        if (weaponItems.Length > 0)
+            slots[1].SetItem(weaponItems[0], weaponItems.Length);
+        if (consumableItems.Length > 0)
+            slots[2].SetItem(consumableItems[0], consumableItems.Length);*/
+        
+        //Debug.Log("Cambió inventario");
+         for (int i = 0; i < slots.Length; i++)
+         {
+             if (i < _inventory.items.Count)
+             {
+                 slots[i].SetItem(_inventory.items[i], 1);
+             }
+             else
+             {
+                 slots[i].Clear();
+             }
+         }
     }
 }

@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
     public void Add(Item newItem)
     {
         if(items.Count < slots)
-         items.Add(newItem);
+            items.Add(newItem);
         if (onChange != null)
         {
             onChange.Invoke();

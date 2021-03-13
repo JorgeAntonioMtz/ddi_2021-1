@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName= "New Mushroom", menuName="Inventory/Usable")]
+[CreateAssetMenu(fileName= "New Mushroom", menuName="Inventory/Consumable")]
 public class Mushroom : Item
 {
     public float lifeAmount = 5.0f;

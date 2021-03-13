@@ -22,7 +22,7 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Entro trigger");
+        //Debug.Log("Entro trigger");
         isInsideZone = true;
     }
 
@@ -31,7 +31,7 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Salio trigger");
+        //Debug.Log("Salio trigger");
         isInsideZone = false;
     }
 
