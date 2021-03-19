@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class InventoryUI : MonoBehaviour
 {
     private Inventory _inventory;
     public GameObject panel;
+    public string inventoryButton = "Inventory";
+
     void Start()
     {
         _inventory = Inventory.InventoryInstance;
@@ -15,7 +18,7 @@ public class InventoryUI : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (CrossPlatformInputManager.GetButtonDown(inventoryButton))
         {
             //toggle
             panel.SetActive(!panel.activeSelf);

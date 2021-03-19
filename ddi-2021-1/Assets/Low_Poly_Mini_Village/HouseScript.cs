@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HouseScript : Interactable
+public class HouseScript : MonoBehaviour //Interactable
 {
 
     AudioSource m_MyAudioSource;
@@ -14,7 +14,7 @@ public class HouseScript : Interactable
         m_MyAudioSource = GetComponent<AudioSource>();
     }
 
-    public override void Interact()
+    /* public override void Interact()
     {
         Debug.Log("Hola");
         if(m_Play==false)
@@ -23,7 +23,6 @@ public class HouseScript : Interactable
             m_MyAudioSource.Play();
         }
         m_Play=false;
-
-    }
+    } */
 
 }

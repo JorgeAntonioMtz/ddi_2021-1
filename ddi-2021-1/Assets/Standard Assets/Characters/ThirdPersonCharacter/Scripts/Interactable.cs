@@ -20,10 +20,10 @@ public class Interactable : MonoBehaviour
      void OnTriggerEnter(Collider other) {
         if(!other.CompareTag("Player"))
         {
-            Debug.Log("Entro trigger");
+            //Debug.Log("Entro trigger");
             return;
         }
-        Debug.Log("Entro trigger");
+        //Debug.Log("Entro trigger");
         isInsideZone = true;
     }
 
@@ -32,7 +32,7 @@ public class Interactable : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Salio trigger");
+        //Debug.Log("Salio trigger");
         isInsideZone = false;
     }
 
