@@ -5,10 +5,13 @@ using UnityEngine;
 public class PickUpObject : Interactable
 {
     public Item item;
+    //public GameObject gameObject;
+
     public override void Interact()
     {
         //base.Interact();
         Inventory.InventoryInstance.Add(item);
         Destroy(this.gameObject);
+        //gameObject.isActive = false;
     }
 }

@@ -17,7 +17,7 @@ public class Slot : MonoBehaviour
         
     }
 
-    public void SetItem(Item item, int count)
+    public void SetItem(Item item, int count = 0)
     {
         this.item = item;
         counter = count;

@@ -18,6 +18,11 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    private void OnMouseDown() {         //OnMazda
+        Interact();
+        Debug.Log("Interaccion OnMouseDown");
+    }
+
     //Is called when the collider other enters the trigger
     //<param name ="other">The other Collider involved in this collision.</param>
      void OnTriggerEnter(Collider other) {

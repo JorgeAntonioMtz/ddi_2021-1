@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Equip, Weapon, Consumable
+    Equip, Weapon, Consumable, Pokemon
 }
 
 [CreateAssetMenu(fileName= "New Item", menuName="Inventory/Generic")]
