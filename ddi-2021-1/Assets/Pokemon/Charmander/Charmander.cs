@@ -14,14 +14,17 @@ public class Charmander : Interactable
     }
 
     public override void Interact()
+	{
+		if(m_Play==false)
 		{
-			if(m_Play==false)
-			{
-				m_Play=true;
-				m_MyAudioSource.Play();
-                Debug.Log("Charmander Cry playing");
-			}
-			m_Play=false;
-
+			m_Play=true;
+			m_MyAudioSource.Play();
+			Debug.Log("Charmander Cry playing");
 		}
+		m_Play=false;
+
+
+	}
+
+	
 }

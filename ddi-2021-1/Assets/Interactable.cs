@@ -5,7 +5,11 @@ using UnityStandardAssets.CrossPlatformInput;
 
 public class Interactable : MonoBehaviour
 {
-    public bool isInsideZone=false;
+    public bool isInsideZone = false;
+    public bool gazedAt = false;
+
+    public float gazeInteractTime = 2f;
+    public float gazeTimer = 0;
     //public KeyCode interactionKey = KeyCode.E;
     public string interactionButton = "Interact";
 
@@ -15,6 +19,24 @@ public class Interactable : MonoBehaviour
         if(isInsideZone && CrossPlatformInputManager.GetButtonDown(interactionButton))
         {
             Interact();
+        }
+        if (gazedAt)
+        {
+            if ((gazeTimer += Time.deltaTime) >= gazeInteractTime)
+            {
+                Interact();
+                gazedAt = false;
+                gazeTimer = 0f;
+            }
+        }
+    }
+
+    public void SetGazedAt(bool gazedAt)
+    {
+        this.gazedAt = gazedAt;
+        if (!gazedAt)
+        {
+            gazeTimer = 0f;
         }
     }
 
