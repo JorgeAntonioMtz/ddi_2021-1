@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using IBM.Watsson.Examples;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
@@ -12,6 +13,14 @@ public class Interactable : MonoBehaviour
     public float gazeTimer = 0;
     //public KeyCode interactionKey = KeyCode.E;
     public string interactionButton = "Interact";
+
+    public string voiceCommand = "use";
+
+    private void Start()
+    {
+        VoiceCommandProcessor commandProcessor = GameObject.FindObjectOfType<VoiceCommandProcessor>();
+        commandProcessor.onVoiceCommandRecognized += OnVoiceCommandRecognized;
+    }
 
     public virtual void Update()
     {
@@ -31,6 +40,12 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    public void OnVoiceCommandRecognized(string command)
+    {
+        if(command.ToLower() == voiceCommand.ToLower() && gazedAt)
+            Interact();
+    }
+
     public void SetGazedAt(bool gazedAt)
     {
         this.gazedAt = gazedAt;
@@ -38,6 +53,18 @@ public class Interactable : MonoBehaviour
         {
             gazeTimer = 0f;
         }
+    }
+
+    public void OnPointerEnter()
+    {
+        gazedAt = true;
+        gazeTimer = 0f;
+    }
+
+    public void OnPointerExit()
+    {
+        gazedAt = false;
+        gazeTimer = 0f;
     }
 
     private void OnMouseDown() {         //OnMazda
